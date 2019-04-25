@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPLOAD</title>
-</head>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Week 14</title>
+    </head>
+    <body>
+        <form id="upload" method="POST">
+            <label for="caption">Caption:</label>
+            <input type="text" id="caption"> <br>
+            <input id="fileupload" type="file" accept="image/jpeg, image/png"> <br>
+            <input type="submit" value="Submit" id="submit">
+        </form>
 
-<body>
-    
-</body>
+        <script src="upload.js"></script>
+        <script src="minio-browser.js"></script>
+    </body>
 </html>
