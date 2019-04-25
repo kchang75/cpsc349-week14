@@ -20,7 +20,7 @@ function getImages(callback) {
 
     var params = {
         url: "http://localhost:3000/images",
-        method: "POST",
+        method: "GET",
         //        data: params,
 //        dataType: "json"
     };
