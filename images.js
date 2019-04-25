@@ -12,7 +12,7 @@ $docBody.ready(function(){
         var testVar = results;
 //        var obj = JSON.parse(results);
         
-        obj.forEach(insertImg(item, index));
+        obj.forEach(insertImg);
         
     })
     
@@ -37,7 +37,7 @@ function getImages(callback) {
 
 }
 
-function insertImg(item, index)
+function insertImg(item)
 {
-    console.log(item, index);
+    console.log(item.id + item.caption + item.src);
 }
