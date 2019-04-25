@@ -40,4 +40,11 @@ function getImages(callback) {
 function insertImg(item)
 {
     console.log(item.id + item.caption + item.src);
+    var htmlTemplate = $("#templateImg").text();
+    
+    $("#orderedList").append(htmlTemplate);
+    $("#orderedList").last("li p").html(item.caption);
+    $("#orderedList").last("li img").attr("src", item.src);
+    $("#orderedList").last("li img").attr("id", item.id);
+    
 }
