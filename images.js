@@ -43,8 +43,9 @@ function insertImg(item)
     var htmlTemplate = $("#templateImg").text();
     
     $("#orderedList").append(htmlTemplate);
-    $("#orderedList").last("p").text(item.caption);
-    $("#orderedList").last("li img").attr("src", item.src);
-    $("#orderedList").last("li img").attr("id", item.id);
+    $("#orderedList").last("img").attr("id", item.id);
+    $("#orderedList").find(item.id).text(item.caption);
+    $("#orderedList").find(item.id).attr("src", item.src);
+    
     
 }
