@@ -12,7 +12,7 @@ $docBody.ready(function(){
         var testVar = results;
 //        var obj = JSON.parse(results);
         
-        obj.images.forEach(insertImg(item, index));
+        obj.forEach(insertImg(item, index));
         
     })
     
@@ -25,7 +25,7 @@ function getImages(callback) {
         url: "http://localhost:3000/images",
         method: "GET",
         //        data: params,
-//        dataType: "json"
+        dataType: "json"
     };
 
     $.ajax(params).done(function (results) {
