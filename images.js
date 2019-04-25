@@ -1,13 +1,16 @@
 $docBody = $(document.body);
 
+var testVar;
 
 $docBody.ready(function(){
     console.log("Loaded page");
     
     getImages(function (results){
-        console.log(JSON.parse(results));
+        console.log(results);
         
-        var obj = JSON.parse(results);
+        var obj = results;
+        var testVar = results;
+//        var obj = JSON.parse(results);
         
         obj.images.forEach(insertImg(item, index));
         
@@ -36,5 +39,5 @@ function getImages(callback) {
 
 function insertImg(item, index)
 {
-    
+    console.log(item, index);
 }
