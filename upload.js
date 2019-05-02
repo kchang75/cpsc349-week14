@@ -1,3 +1,11 @@
+window.onload = function(e)
+{
+    var template = document.querySelector("#formTemplate");
+    
+    var node = document.importNode(template.content, true);
+    document.body.appendChild(node);
+}
+
 let s3Client = new AWS.S3({
     endpoint: "http://127.0.0.1:9000",
     s3ForcePAthStyle: true,

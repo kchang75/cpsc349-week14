@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Week 14</title>
-    </head>
-    <body>
+
+<head>
+    <meta charset="utf-8">
+    <title>Week 14</title>
+</head>
+
+<body>
+    <!--        <script src="minio-browser.js"></script>-->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.447.0.min.js"></script>
+    <script src="upload.js"></script>
+
+</body>
+    
+    <template id="formTemplate">
         <form id="upload" method="POST">
             <label for="caption">Caption:</label>
             <input type="text" id="caption"> <br>
             <input id="fileupload" type="file" accept="image/jpeg, image/png"> <br>
             <input type="submit" value="Submit" id="submit" onclick="uploadImage()">
         </form>
+    </template>
 
-<!--        <script src="minio-browser.js"></script>-->
-        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.447.0.min.js"></script>
-        <script src="upload.js"></script>
-        
-    </body>
 </html>
