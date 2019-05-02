@@ -6,33 +6,40 @@ let s3Client = new AWS.S3({
     secretAccessKey: "eiCN5aFmDO9giYIqjpdu8+BOMPA17z2J74bSHBmL"
 });
 
-let objParam = {
-    Bucket: "images",
-    Key: file.name,
-    Body: file,
-    ContentLength: file.size,
-    ContentType: file.type
-};
 
-s3Client.putObject(objParam, function (err, data) {console.log(err, data); });
+function uploadImage() {
 
-function uploadImage(imgData) {
+    //    var resultDiv = $("#resultDivContainer");
 
-//    var resultDiv = $("#resultDivContainer");
+    var imgData = document.getElementById("fileupload").files[0] || null;
 
-    $.ajax({
-        url: "https://localhost:3000/images",
-        type: "POST",
-        data: imgData,
-//        dataType: "json",
-        success: function (result) {
-            alert(result);
-        },
-        error: function (xhr, ajaxOptions, thrownError) {
-            alert(xhr.status);
-            alert(thrownError);
-        }
-    });
+    if (imgData === null) {
+        //        $.ajax({
+        //            url: "https://localhost:3000/images",
+        //            type: "POST",
+        //            data: imgData,
+        //            //        dataType: "json",
+        //            success: function (result) {
+        //                alert(result);
+        //            },
+        //            error: function (xhr, ajaxOptions, thrownError) {
+        //                alert(xhr.status);
+        //                alert(thrownError);
+        //            }
+        //        });
+        let objParam = {
+            Bucket: "images",
+            Key: imgData.name,
+            Body: imgData,
+            ContentLength: imgData.size,
+            ContentType: imgData.type
+        };
+
+        s3Client.putObject(objParam, function (err, data) {
+            console.log(err, data);
+        });
+
+    }
 };
 
 //var Fs = require('fs')
@@ -42,7 +49,7 @@ function uploadImage(imgData) {
 //            if (err) {
 //                return console.log(err)
 //            }
-            //minioClient.putObject('images', '40mbfile', fileStream, stats.size, function(err, etag) {
-            //  return console.log(err, etag) // err should be null
-            //})
-            //})
+//minioClient.putObject('images', '40mbfile', fileStream, stats.size, function(err, etag) {
+//  return console.log(err, etag) // err should be null
+//})
+//})
