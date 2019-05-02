@@ -16,22 +16,17 @@ let objParam = {
 
 s3Client.putObject(objParam, function (err, data) {console.log(err, data); });
 
-JSONTest = function () {
+function uploadImage(imgData) {
 
-    var resultDiv = $("#resultDivContainer");
+//    var resultDiv = $("#resultDivContainer");
 
     $.ajax({
         url: "https://localhost:3000/images",
         type: "POST",
-        dataType: "json",
+        data: imgData,
+//        dataType: "json",
         success: function (result) {
-            switch (result) {
-                case true:
-                    processResponse(result);
-                    break;
-                default:
-                    resultDiv.html(result);
-            }
+            alert(result);
         },
         error: function (xhr, ajaxOptions, thrownError) {
             alert(xhr.status);
